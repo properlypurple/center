@@ -35,7 +35,6 @@ function child_theme_setup() {
 
 // Adding Color Style Options
 	add_theme_support( 'genesis-style-selector', array(
-		'center-grey' => __( 'Grey', 'center' ),
 		'center-dark' => __( 'Dark', 'center' )
 	) );
 

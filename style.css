@@ -1031,11 +1031,11 @@ Content Area
 Home Top widget
 --------------------------------------------- */
 .home-top .widget {
-	background: none repeat scroll 0% 0% rgb(255, 255, 255);
+	background: none repeat scroll 0% 0% #fff;
 	padding: 40px 40px;
 	padding: 4rem 4rem;
-	border: 1px solid rgb(221, 221, 221);
-	box-shadow: 0px 0px 3px rgb(221, 221, 221);
+	border: 1px solid #ddd;
+	box-shadow: 0px 0px 3px #ddd;
 	margin-bottom: 30px;
 	margin-bottom: 3rem;
 }
@@ -1044,11 +1044,11 @@ Home Top widget
 --------------------------------------------- */
 
 .entry {
-	background: none repeat scroll 0% 0% rgb(255, 255, 255);
+	background: none repeat scroll 0% 0% #fff;
 	padding: 40px 40px 0px;
 	padding: 4rem 4rem 0rem;
-	border: 1px solid rgb(221, 221, 221);
-	box-shadow: 0px 0px 3px rgb(221, 221, 221);
+	border: 1px solid #ddd;
+	box-shadow: 0px 0px 3px #ddd;
 	margin-bottom: 30px;
 	margin-bottom: 3rem;
 }
@@ -1392,6 +1392,54 @@ Site Footer
 	margin-bottom: 0;
 }
 
+/*
+Color Schemes
+---------------------------------------------------------------------------------------------------- */
+.center-dark{
+	background: url(images/body-dark.png) repeat scroll #111;
+}
+.center-dark,
+.center-dark h1,
+.center-dark h2,
+.center-dark h3,
+.center-dark h4,
+.center-dark h5,
+.center-dark h6,
+.center-dark a,
+.center-dark p,
+.center-dark div
+.cente-dark span{
+	color: #eee;
+}
+.center-dark a:hover {
+	color: #fff;
+}
+.center-dark .title-area,
+.center-dark .site-title a,
+.center-dark .site-description {
+	color: #f9f9f9;
+	text-shadow: 0px -2px 0 #000;
+}
+.center-dark .home-top .widget,
+.center-dark .entry {
+	background: #333;
+	color: #f9f9f9;
+	border: 1px solid #3d3d3d;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+}
+.center-dark .entry-title a,
+.center-dark .entry-header,
+.center-dark .entry-footer {
+	color: #f9f9f9;
+}
+.center-dark .entry-header .entry-meta {
+	border-bottom: 1px solid #3d3d3d;
+}
+.center-dark .entry-footer .entry-meta {
+	border-top: 2px solid #3a3a3a;
+	background: #3f3f3f;
+	color: #f9f9f9;
+}
 
 /*
 Media Queries

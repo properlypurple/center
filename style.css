@@ -901,7 +901,7 @@ Site Navigation
 	position: relative;
 }
 
-.genesis-nav-menu li:hover a,
+.genesis-nav-menu a:hover,
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
 	color: #eee;
@@ -1006,6 +1006,7 @@ Site Navigation
 }
 
 .nav-primary a:hover,
+.nav-primary li:hover a,
 .nav-primary .current-menu-item > a {
 	color: #fff;
 	background: #555;

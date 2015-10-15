@@ -605,6 +605,8 @@ img.alignright,
 .author-box {
 	padding: 40px;
 	padding: 4rem;
+	border: 1px solid #DDD;
+	box-shadow: 0px 0px 3px #DDD;
 }
 
 .author-box-title {

@@ -69,9 +69,6 @@ function child_theme_setup() {
 	genesis_unregister_layout( 'content-sidebar' );
 	add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 	
-	// Remove Unused User Settings
-	add_filter( 'user_contactmethods', 'center_contactmethods' );
-	add_action( 'admin_init', 'center_remove_user_settings' );
 
 	// Editor Styles
 	add_editor_style( 'editor-style.css' );
@@ -79,24 +76,10 @@ function child_theme_setup() {
 	// Setup Theme Settings
 	include_once( CHILD_DIR . '/lib/functions/child-theme-settings.php' );
 
-	// Reposition Genesis Metaboxes
-	remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
-	add_action( 'admin_menu', 'center_add_inpost_seo_box' );
-
-
-	// Remove Genesis Theme Settings Metaboxes
-	add_action( 'genesis_theme_settings_metaboxes', 'center_remove_genesis_metaboxes' );
-
 	// Don't update theme
 	add_filter( 'http_request_args', 'center_dont_update_theme', 5, 2 );
 
-	// ** Frontend **		
-	
-	// Remove Edit link
-	add_filter( 'genesis_edit_post_link', '__return_false' );
-	
-	// Responsive Meta Tag
-	add_action( 'genesis_meta', 'center_viewport_meta_tag' );
+	// ** Frontend **
 	
 	// Footer
 	remove_action( 'genesis_footer', 'genesis_do_footer' );
@@ -105,83 +88,6 @@ function child_theme_setup() {
 } //end theme setup
 
 // ** Backend Functions ** //
-
-/**
- * Customize Contact Methods
- * @since 1.0.0
- *
- * @author Bill Erickson
- * @link http://sillybean.net/2010/01/creating-a-user-directory-part-1-changing-user-contact-fields/
- *
- * @param array $contactmethods
- * @return array
- */
-function center_contactmethods( $contactmethods ) {
-	unset( $contactmethods['aim'] );
-	unset( $contactmethods['yim'] );
-	unset( $contactmethods['jabber'] );
-	
-	return $contactmethods;
-}
-
-/**
- * Remove Use Theme Settings
- * 
- */
-function center_remove_user_settings() {
-	remove_action( 'show_user_profile', 'genesis_user_options_fields' );
-	remove_action( 'edit_user_profile', 'genesis_user_options_fields' );
-	remove_action( 'show_user_profile', 'genesis_user_archive_fields' );
-	remove_action( 'edit_user_profile', 'genesis_user_archive_fields' );
-	remove_action( 'show_user_profile', 'genesis_user_seo_fields' );
-	remove_action( 'edit_user_profile', 'genesis_user_seo_fields' );
-	remove_action( 'show_user_profile', 'genesis_user_layout_fields' );
-	remove_action( 'edit_user_profile', 'genesis_user_layout_fields' );
-}
-
-/**
- * Register a new meta box to the post / page edit screen, so that the user can
- * set SEO options on a per-post or per-page basis.
- *
- * @category Genesis
- * @package Admin
- * @subpackage Inpost-Metaboxes
- *
- * @since 0.1.3
- *
- * @see genesis_inpost_seo_box() Generates the content in the meta box
- */
-function center_add_inpost_seo_box() {
-
-	if ( genesis_detect_seo_plugins() )
-		return;
-		
-	foreach ( (array) get_post_types( array( 'public' => true ) ) as $type ) {
-		if ( post_type_supports( $type, 'genesis-seo' ) )
-			add_meta_box( 'genesis_inpost_seo_box', __( 'Theme SEO Settings', 'genesis' ), 'genesis_inpost_seo_box', $type, 'normal', 'default' );
-	}
-
-}
-
-
-
-/**
- * Remove Genesis Theme Settings Metaboxes
- *
- * @since 1.0.0
- * @param string $_genesis_theme_settings_pagehook
- */
-function center_remove_genesis_metaboxes( $_genesis_theme_settings_pagehook ) {
-	//remove_meta_box( 'genesis-theme-settings-feeds',      $_genesis_theme_settings_pagehook, 'main' );
-	//remove_meta_box( 'genesis-theme-settings-header',     $_genesis_theme_settings_pagehook, 'main' );
-	remove_meta_box( 'genesis-theme-settings-nav',        $_genesis_theme_settings_pagehook, 'main' );
-	// remove_meta_box( 'genesis-theme-settings-layout',    $_genesis_theme_settings_pagehook, 'main' );
-	//remove_meta_box( 'genesis-theme-settings-breadcrumb', $_genesis_theme_settings_pagehook, 'main' );
-	//remove_meta_box( 'genesis-theme-settings-comments',   $_genesis_theme_settings_pagehook, 'main' );
-	//remove_meta_box( 'genesis-theme-settings-posts',      $_genesis_theme_settings_pagehook, 'main' );
-	remove_meta_box( 'genesis-theme-settings-blogpage',   $_genesis_theme_settings_pagehook, 'main' );
-	//remove_meta_box( 'genesis-theme-settings-scripts',    $_genesis_theme_settings_pagehook, 'main' );
-}
 
 /**
  * Don't Update Theme
@@ -211,18 +117,7 @@ function center_dont_update_theme( $r, $url ) {
 // ** Frontend Functions ** //
 
 /**
- * Viewport Meta Tag for Mobile Browsers
- *
- * @author Bill Erickson
- * @link http://www.billerickson.net/code/responsive-meta-tag
- */
-function center_viewport_meta_tag() {
-	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>';
-}
-
-/**
- * Footer 
- *
+ * Footer
  */
 function center_footer() {
 	echo wpautop( genesis_get_option( 'footer', 'child-settings' ) );

@@ -72,18 +72,10 @@ function child_theme_setup() {
 
 	// Editor Styles
 	add_editor_style( 'editor-style.css' );
-		
-	// Setup Theme Settings
-	include_once( CHILD_DIR . '/lib/functions/child-theme-settings.php' );
 
 	// Don't update theme
 	add_filter( 'http_request_args', 'center_dont_update_theme', 5, 2 );
 
-	// ** Frontend **
-	
-	// Footer
-	remove_action( 'genesis_footer', 'genesis_do_footer' );
-	add_action( 'genesis_footer', 'center_footer' );
 
 } //end theme setup
 
@@ -112,13 +104,4 @@ function center_dont_update_theme( $r, $url ) {
 	unset( $themes[ get_option( 'stylesheet' ) ] );
 	$r['body']['themes'] = serialize( $themes );
 	return $r;
-}
-
-// ** Frontend Functions ** //
-
-/**
- * Footer
- */
-function center_footer() {
-	echo wpautop( genesis_get_option( 'footer', 'child-settings' ) );
 }

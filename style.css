@@ -834,23 +834,18 @@ Site Header
 	width: 100%;
 }
 
+.header-image .site-title > a {
+	background-position: center center !important;
+	background-size: 300px 64px !important;
+	float: left;
+	min-height: 64px;
+	width: 100%;
+}
+
 .header-image .site-description,
-.header-image .site-title a {
+.header-image .site-title {
 	display: block;
 	text-indent: -9999px;
-}
-
-/* Logo, hide text */
-
-.header-image .site-header .wrap {
-	background: url(images/logo.png) no-repeat left;
-	padding: 0;
-}
-
-.header-image .site-title a {
-	float: left;
-	min-height: 164px;
-	width: 100%;
 }
 
 /* Widget Area

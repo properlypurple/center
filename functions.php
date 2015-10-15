@@ -30,10 +30,23 @@ function child_theme_setup() {
 	// Menus
 	add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu' ) );
 	
-//Footer Widget
+	
+	// Add support for custom header
+	add_theme_support( 'custom-header', array(
+		'width'           => 600,
+		'height'          => 128,
+		'header-selector' => '.site-title a',
+		'header-text'     => false,
+		'flex-height'     => true,
+	) );
+	
+	// Add support for custom background
+	add_theme_support( 'custom-background' );
+	
+	//Footer Widget
 	add_theme_support( 'genesis-footer-widgets', 2);
 
-// Adding Color Style Options
+	// Adding Color Style Options
 	add_theme_support( 'genesis-style-selector', array(
 		'center-dark' => __( 'Dark', 'center' )
 	) );

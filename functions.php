@@ -75,6 +75,9 @@ function child_theme_setup() {
 
 	// Don't update theme
 	add_filter( 'http_request_args', 'center_dont_update_theme', 5, 2 );
+	
+	// Better looking post meta in header
+	add_filter( 'genesis_post_info', 'anahita_post_info');
 
 
 } //end theme setup
@@ -104,4 +107,15 @@ function center_dont_update_theme( $r, $url ) {
 	unset( $themes[ get_option( 'stylesheet' ) ] );
 	$r['body']['themes'] = serialize( $themes );
 	return $r;
+}
+
+/**
+ * Better looking post_info
+ * @since 1.1.0
+ *
+ */
+
+function anahita_post_info($filtered) {
+	$filtered = '[post_author_posts_link] [post_date format="M d, Y"] [post_comments] [post_edit]';
+	return $filtered;
 }

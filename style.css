@@ -1132,6 +1132,46 @@ Home Top widget
 	display: block;
 }
 
+.entry-categories::before,
+.entry-tags::before,
+.entry-time::before,
+.entry-author::before,
+.entry-comments-link::before {
+	display: inline-block;
+	font: normal 16px/1 'dashicons';
+	margin-right: 5px;
+	margin-top: 4px;
+	vertical-align: top;
+	-webkit-font-smoothing: antialiased;
+}
+
+.entry-categories::before {
+	content: "\f318";
+}
+
+.entry-tags::before {
+	content: "\f323";
+}
+
+.entry-time::before {
+	content: "\f508";
+}
+.entry-author::before {
+	content: "\f338";
+}
+
+.entry-comments-link::before {
+	content: "\f101";
+}
+
+.entry-time::after,
+.entry-author::after {
+	content: '/';
+	margin: 0 10px 0 16px;
+	opacity: 0.5;
+}
+
+
 /* Pagination
 --------------------------------------------- */
 

@@ -208,6 +208,8 @@ blockquote::before {
 blockquote {
 	margin: 40px 40px 24px;
 	margin: 4rem 4rem 2.4rem;
+	font-size: large;
+	font-style: italic;
 }
 
 blockquote::before {

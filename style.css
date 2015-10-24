@@ -137,7 +137,6 @@ html {
 }
 
 body {
-	background: url(images/body.png) repeat scroll #f5f5f5;
 	color: #666;
 	font-family: 'Lato', Arial, sans-serif;
 	font-size: 16px;
@@ -1432,7 +1431,7 @@ Site Footer
 Color Schemes
 ---------------------------------------------------------------------------------------------------- */
 .center-dark{
-	background: url(images/body-dark.png) repeat scroll #111;
+	background: #111;
 }
 .center-dark,
 .center-dark h1,

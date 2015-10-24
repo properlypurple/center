@@ -41,7 +41,10 @@ function child_theme_setup() {
 	) );
 	
 	// Add support for custom background
-	add_theme_support( 'custom-background' );
+	add_theme_support( 'custom-background', array(
+		'default-color'	=> 'f5f5f5',
+		'default-image'	=>	get_stylesheet_directory_uri().'/images/body.png'
+	) );
 	
 	//Footer Widget
 	add_theme_support( 'genesis-footer-widgets', 2);

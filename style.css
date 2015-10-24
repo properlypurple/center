@@ -1456,7 +1456,10 @@ Color Schemes
 	text-shadow: 0px -2px 0 #000;
 }
 .center-dark .home-top .widget,
-.center-dark .entry {
+.center-dark .entry,
+.center-dark .comment-respond,
+.center-dark .entry-comments,
+.center-dark .entry-pings{
 	background: #333;
 	color: #f9f9f9;
 	border: 1px solid #3d3d3d;
@@ -1474,6 +1477,33 @@ Color Schemes
 	border-top: 2px solid #3a3a3a;
 	background: #3f3f3f;
 	color: #f9f9f9;
+}
+
+.center-dark li.comment {
+	background: #3f3f3f;
+}
+
+.center-dark .comment-list li li {
+	border-left-color: #333333;
+}
+
+.center-dark button,
+.center-dark input[type="button"],
+.center-dark input[type="reset"],
+.center-dark input[type="submit"],
+.center-dark .button,
+.center-dark .entry-content .button {
+	background-color: #333333;
+	border: 2px solid #f5f5f5;
+}
+
+.center-dark button:hover,
+.center-dark input:hover[type="button"],
+.center-dark input:hover[type="reset"],
+.center-dark input:hover[type="submit"],
+.center-dark .button:hover,
+.center-dark .entry-content .button:hover {
+	background-color: #555555;
 }
 
 /*
